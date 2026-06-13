@@ -15,7 +15,7 @@
     <?php
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $username = $_POST["username"] ?? '';
-            $age = $_POST["age"];
+            $age = $_POST["age"] ?? '';
             $telephonenumber = $_POST["telephonenumber"] ?? '';
             $emailaddress = $_POST["emailaddress"] ?? '';
             $address = $_POST["address"] ?? '';
