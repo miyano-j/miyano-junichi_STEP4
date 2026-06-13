@@ -14,13 +14,13 @@
     <h1>入力内容確認</h1>
     <?php
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $username = $_POST["username"];
+            $username = $_POST["username"] ?? '';
             $age = $_POST["age"];
-            $telephonenumber = $_POST["telephonenumber"];
-            $emailaddress = $_POST["emailaddress"];
-            $address = $_POST["address"];
-            $question = $_POST["question"];
-            $gender = $_POST["gender"];
+            $telephonenumber = $_POST["telephonenumber"] ?? '';
+            $emailaddress = $_POST["emailaddress"] ?? '';
+            $address = $_POST["address"] ?? '';
+            $question = $_POST["question"] ?? '';
+            $gender = $_POST["gender"] ?? '';
 
 
             //バリデーション
@@ -39,7 +39,7 @@
             elseif (!filter_var($emailaddress, FILTER_VALIDATE_EMAIL)) {
                 echo "<p>メールアドレスの形式が正しくありません。</p>";
             }
-            elseif (!preg_match("/^[ぁ-んァ-ケー-龠a-zA-Z0-9\-]+$/u", $address)) {
+            elseif (!preg_match("/^[ぁ-んァ-ヶー-龠a-zA-Z0-9\-]+$/u", $address)) {
                 echo "<p>住所はひらがな、カタカナ、漢字、英字、半角数字、ハイフンのみ使用できます。</p>";
             }
             else {
